@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOE Student Registration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="grid-lines"></div>
+    </div>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="header-badge">Ministry of Education</div>
+            <h1 class="main-title">Update Record Student Information MOE</h1>
+            <p class="subtitle">Fill Your Info Correctly</p>
+        </header>
+
+        <!-- Registration Form Card -->
+        <div class="form-card">
+            <form id="registrationForm" class="registration-form" novalidate>
+                <!-- Row 1: Personal Info -->
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="fullName">Full Name</label>
+                        <div class="input-wrapper">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            </span>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-wrapper">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </span>
+                            <input type="email" id="email" name="email" placeholder="student@example.com" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 2: ID & Department -->
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="studentId">Student ID</label>
+                        <div class="input-wrapper">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                            </span>
+                            <input type="text" id="studentId" name="studentId" placeholder="e.g., RU0333" required pattern="^RU\d{4}$">
+                            <span class="helper-text">Format: RU followed by 4 digits</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="department">Department</label>
+                        <div class="input-wrapper select-wrapper">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                            </span>
+                            <select id="department" name="department" required>
+                                <option value="" disabled selected>Select Department</option>
+                                <option value="cs">Computer Science</option>
+                                <option value="eng">Engineering</option>
+                                <option value="health">Health</option>
+                                <option value="law">Law</option>
+                                <option value="business">Business</option>
+                                <option value="arts">Arts & Humanities</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Year & Semester -->
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="year">Year</label>
+                        <div class="input-wrapper select-wrapper">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            </span>
+                            <select id="year" name="year" required>
+                                <option value="" disabled selected>Select Year</option>
+                                <option value="1">Year 1</option>
+                                <option value="2">Year 2</option>
+                                <option value="3">Year 3</option>
+                                <option value="4">Year 4</option>
+                                <option value="5">Year 5</option>
+                                <option value="6">Year 6</option>
+                                <option value="7">Year 7</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="semester">Semester</label>
+                        <div class="input-wrapper select-wrapper">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                            </span>
+                            <select id="semester" name="semester" required>
+                                <option value="" disabled selected>Select Semester</option>
+                                <option value="first">First Semester</option>
+                                <option value="second">Second Semester</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4: Gender & Status -->
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="gender">Gender</label>
+                        <div class="input-wrapper select-wrapper">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8z"/><path d="M6 8a6 6 0 1 0 12 0"/></svg>
+                            </span>
+                            <select id="gender" name="gender" required>
+                                <option value="" disabled selected>Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="both">Both</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="status">Status</label>
+                        <div class="input-wrapper select-wrapper">
+                            <span class="icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                            </span>
+                            <select id="status" name="status" required>
+                                <option value="" disabled selected>Select Status</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="divorce">Divorce</option>
+                                <option value="widow">Widow</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span>Submit Registration</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                </button>
+            </form>
+
+            <!-- Success Message -->
+            <div class="success-overlay" id="successOverlay">
+                <div class="success-content">
+                    <div class="checkmark-circle">
+                        <svg class="checkmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <h2>Successful!</h2>
+                    <p>Just That! Record updated.</p>
+                    <button type="button" class="reset-btn" id="resetBtn">Register Another</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Firebase + Your Script -->
+<script type="module" src="script.js"></script>
+</body>
+</html>
